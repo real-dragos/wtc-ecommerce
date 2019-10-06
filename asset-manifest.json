@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/wtc-ecommerce/static/css/main.84782cdf.chunk.css",
+    "main.js": "/wtc-ecommerce/static/js/main.2409e2a2.chunk.js",
+    "main.js.map": "/wtc-ecommerce/static/js/main.2409e2a2.chunk.js.map",
+    "runtime-main.js": "/wtc-ecommerce/static/js/runtime-main.6a5163ac.js",
+    "runtime-main.js.map": "/wtc-ecommerce/static/js/runtime-main.6a5163ac.js.map",
+    "static/js/2.df331783.chunk.js": "/wtc-ecommerce/static/js/2.df331783.chunk.js",
+    "static/js/2.df331783.chunk.js.map": "/wtc-ecommerce/static/js/2.df331783.chunk.js.map",
+    "index.html": "/wtc-ecommerce/index.html",
+    "precache-manifest.674b47e0f77c0589a736d416c5312134.js": "/wtc-ecommerce/precache-manifest.674b47e0f77c0589a736d416c5312134.js",
+    "service-worker.js": "/wtc-ecommerce/service-worker.js",
+    "static/css/main.84782cdf.chunk.css.map": "/wtc-ecommerce/static/css/main.84782cdf.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a5163ac.js",
+    "static/js/2.df331783.chunk.js",
+    "static/css/main.84782cdf.chunk.css",
+    "static/js/main.2409e2a2.chunk.js"
+  ]
+}
