@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './signin-form.module.scss';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
-import { signInWithGoogle } from '../../firebase/firebase.utils';
+import { signInWithGoogle, auth } from '../../firebase/firebase.utils';
+
 class SignInForm extends React.Component {
     constructor(props) {
         super(props);
@@ -12,13 +13,20 @@ class SignInForm extends React.Component {
         }
     }
 
-    submitHandler = (event) => {
+    submitHandler = async (event) => {
         event.preventDefault();
 
-        this.setState({
-            email: '',
-            password: ''
-        })
+        const { email, password } = this.state;
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            this.setState({
+                email: '',
+                password: ''
+            })
+        } catch(error) {
+            console.log(error.message)
+        }
     }
 
     changeHandler = (event) => {
@@ -30,6 +38,9 @@ class SignInForm extends React.Component {
     }
 
     render() {
+
+        const { email, password } = this.state;
+
         return (
             <div className={styles['signin-form']}>
                 <h2 className={styles['title']}>I already have an account</h2>
@@ -40,7 +51,7 @@ class SignInForm extends React.Component {
                         changeHandler={this.changeHandler} label='Email'
                         name='email'
                         type='email'
-                        value={this.state.email}
+                        value={email}
                         autoComplete='current-email'
                         required
                     />
@@ -48,7 +59,7 @@ class SignInForm extends React.Component {
                         changeHandler={this.changeHandler} label='Password'
                         name='password'
                         type='password'
-                        value={this.state.password}
+                        value={password}
                         autoComplete='current-password'
                         required
                     />
